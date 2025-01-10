@@ -1,0 +1,1 @@
+$HOME/.deno/bin/deno run --env-file --unstable-kv -A jsr:@nguvu/cloud

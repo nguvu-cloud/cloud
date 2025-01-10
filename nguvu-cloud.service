@@ -1,0 +1,11 @@
+[Unit]
+Description=Nguvu Cloud
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /serve.sh
+Restart=always
+Environment="HOME=/home/{username}"
+
+[Install]
+WantedBy=multi-user.target
