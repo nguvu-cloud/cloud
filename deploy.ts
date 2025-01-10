@@ -139,7 +139,7 @@ fetch(`${Deno.env.get("DEPLOY_URL")}?hostname=${hostname}`, {
     "color: green",
     "color: blue",
   );
-  Deno.exit(1);
+  Deno.exit(0);
 }).catch((err) => {
   console.error(
     `%cDeployed packaged app to %c${Deno.env.get("DEPLOY_URL")}`,

@@ -1,0 +1,26 @@
+{
+  "version": "4",
+  "specifiers": {
+    "jsr:@std/cli@1.0.3": "1.0.3",
+    "jsr:@std/fs@1.0.3": "1.0.3",
+    "jsr:@std/path@1.0.3": "1.0.3",
+    "jsr:@std/path@^1.0.4": "1.0.8"
+  },
+  "jsr": {
+    "@std/cli@1.0.3": {
+      "integrity": "9a0488b5d2e58d29dce106a941eecec7181fae996bf0d2225563f1ca7e4b100c"
+    },
+    "@std/fs@1.0.3": {
+      "integrity": "3cb839b1360b0a42d8b367c3093bfe4071798e6694fa44cf1963e04a8edba4fe",
+      "dependencies": [
+        "jsr:@std/path@^1.0.4"
+      ]
+    },
+    "@std/path@1.0.3": {
+      "integrity": "cd89d014ce7eb3742f2147b990f6753ee51d95276bfc211bc50c860c1bc7df6f"
+    },
+    "@std/path@1.0.8": {
+      "integrity": "548fa456bb6a04d3c1a1e7477986b6cffbce95102d0bb447c67c4ee70e0364be"
+    }
+  }
+}

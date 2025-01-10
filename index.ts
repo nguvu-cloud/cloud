@@ -22,7 +22,7 @@ const RunApps = async () => {
       hostname: app.hostname,
       port: app.port,
       name: app.hostname,
-      path: `${app.path}/app`,
+      path: `${app.path}`,
     });
     console.log("Running", app.hostname);
   }
@@ -48,9 +48,10 @@ addEventListener("loadApp", async (e: AppLoadEvent) => {
     create: true,
   });
 
-  const command = new Deno.Command(e.detail.path, {
+  const command = new Deno.Command(`${e.detail.path}/app`, {
     args: [
       `--port=${port}`,
+      `--sourceDir=${e.detail.path}/src`,
     ],
     // stdin: "piped",
     stdout: "piped",
@@ -187,7 +188,7 @@ Deno.serve({ port: 8001 }, async (request: Request) => {
           hostname,
           port: app.port,
           name: deployedStatus.name,
-          path: `${deployedStatus.deployPath}/app`,
+          path: deployedStatus.deployPath,
         });
         app.path = deployedStatus.deployPath;
         await kv.set(["app", hostname], app);
