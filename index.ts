@@ -125,7 +125,7 @@ if (key_path && cert_path) {
 Deno.serve({ cert, key, port }, async (request: Request) => {
   const uri = new URL(request.url);
 
-  const hostProcess: HostProcess = (await kv.get(["hp", uri.hostname])).value;
+  const hostProcess: HostProcess = (await kv.get(["hp", uri.hostname])).value as HostProcess 
 
   if (!hostProcess) {
     return new Response("How can I help");

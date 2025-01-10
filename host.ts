@@ -1,8 +1,9 @@
 import { ensureDir } from "jsr:@std/fs@1.0.3";
 import { join } from "jsr:@std/path@1.0.3/join";
 import { App } from "./models/app.ts";
+import { DeployStatus } from "./models/deploy.ts";
 
-const deploy = async (request: Request, app: App) => {
+const deploy = async (request: Request, app: App) : Promise<DeployStatus> => {
   console.time("file saved");
   const name = app.name.replaceAll(" ", ".").toLowerCase() ||
     Date.now().toString();
