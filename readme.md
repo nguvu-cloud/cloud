@@ -6,16 +6,22 @@
 [Certbot](https://certbot.eff.org/)
 
 
-### Setup Server
+### Configure Server
 copy nguvu-cloud.serice file and change the username by enviroment 
 copy the serve.sh and `chmod+x serve.sh` in home directory
 
 enable cloud service
 ```sudo systemctl enable nguvu-cloud.service```
 
-start enable cloud service
+start nguvu cloud 
 ```sudo systemctl start nguvu-cloud.service```
 
+
+check the status of nguvu cloud
+```sudo systemctl start nguvu-cloud.service```
+
+check the logs (temporary)
+```sudo journalctl -u nguvu-cloud.service -n10```s
 
 ### Roadmap 
 [ ] Documentation

@@ -157,7 +157,7 @@ Deno.serve({ port: 8001 }, async (request: Request) => {
     });
   }
 
-  const app: App = await getRegisteredApp(hostname);
+  const app: App = await getRegisteredApp(hostname) || {};
 
   if (!app && pathname !== "/register") {
     return new Response(`App ${hostname} does not exist`, {
