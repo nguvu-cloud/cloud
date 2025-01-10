@@ -108,7 +108,21 @@ const getRegisteredApp = async (hostname: string): Promise<App> => {
   return (await kv.get(["app", hostname])).value as App;
 };
 
-Deno.serve({ port: 8000 }, async (request: Request) => {
+const decoder = new TextDecoder("utf-8");
+
+const cert_path = Deno.env.get("CERT_PATH");
+const key_path = Deno.env.get("KEY_PATH");
+
+let port = 8000;
+let cert, key;
+
+if (key_path && cert_path) {
+  cert = decoder.decode(await Deno.readFile(cert_path));
+  key = decoder.decode(await Deno.readFile(key_path));
+  port = 443;
+}
+
+Deno.serve({ cert, key, port }, async (request: Request) => {
   const uri = new URL(request.url);
 
   const hostProcess: HostProcess = (await kv.get(["hp", uri.hostname])).value;

@@ -62,6 +62,7 @@ console.log(
   "color: blue",
   "color: green",
 );
+
 // Compile App
 const compileCommand = new Deno.Command("deno", {
   env: { "DENO_DIR": join(tempDir, "pkg", "deno_dir") },
