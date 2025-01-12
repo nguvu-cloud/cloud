@@ -1,10 +1,24 @@
 # Nguvu Cloud Alpha
 ## The death to cpanel
 
+First Class support for [Rocky Linux 9](https://rockylinux.org/)
+Built on [deno](https://deno.com/), the JavaScript runtime for the modern web.
+
+### Setup Unzip
+```sudo dnf install unzip ```
+
+### Setup Deno
+```curl -fsSL https://deno.land/install.sh | sh```
+
+
 ### SSL Setup
 
-[Certbot](https://certbot.eff.org/)
+[Certbot](https://certbot.eff.org/instructions?ws=webproduct&os=pip&tab=wildcard)
 
+
+### Setup Nguvu Cloud Serice 
+
+```deno run --allow-net --allow-read --allow-write --allow-run jsr:@nguvu/cloud/setup --username={computer username}```
 
 ### Deploy App 
 
