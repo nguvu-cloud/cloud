@@ -1,10 +1,17 @@
 // Copyright Worklyn Station Inc. All Rights Reserved. Proprietary and confidential.
 // Inspired by Codebender HQ Inc Deploy and Deno Land Inc ddng
 
+
+  /**
+  * This module contains function deploy, .
+  * @module
+  */
+
 import { parseArgs } from "jsr:@std/cli@1.0.3/parse-args";
 import { join } from "jsr:@std/path@1.0.3/join";
 import { ensureDir } from "jsr:@std/fs@1.0.3";
 const args = parseArgs(Deno.args);
+ 
 
 const sourceDir = args.sourceDir || Deno.cwd();
 let entryPoint = args.entryPoint;

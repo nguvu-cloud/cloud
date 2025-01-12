@@ -8,12 +8,12 @@
 
 ### Deploy App 
 
-```deno run -A https://jsr.io/@nguvu/cloud/0.0.1/deploy.ts --hostname=domain.tld```
+```deno run -A jsr:@nguvu/cloud/deploy --hostname=domain.tld```
 
 
 ### Configure Server
 copy nguvu-cloud.serice file and change the username by enviroment 
-copy the serve.sh and `chmod+x serve.sh` in home directory
+copy the serve.sh and `chmod +x serve.sh` in home directory
 
 [systemd](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
 enable cloud service
@@ -24,7 +24,7 @@ start nguvu cloud
 
 
 check the status of nguvu cloud
-```sudo systemctl start nguvu-cloud.service```
+```sudo systemctl status nguvu-cloud.service```
 
 check the logs (temporary)
 ```sudo journalctl -u nguvu-cloud.service -n10```
@@ -32,3 +32,6 @@ check the logs (temporary)
 ### Roadmap
 - [ ] Documentation
 - [ ] Remove -A flag
+- [ ] Website Security 
+- [ ] API Security
+- [ ] Make the setup files one one 
