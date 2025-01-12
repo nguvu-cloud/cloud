@@ -1,5 +1,5 @@
 {
     "name": "@nguvu/cloud",
-    "version": "0.0.2",
-    "exports": {".": "./index.ts", "./deploy":"./deploy.ts", "./setup":"./service.ts"}
+    "version": "0.0.3",
+    "exports": {".": "./index.ts", "./deploy":"./deploy.ts", "./setup":"./setup/service.ts"}
   }
