@@ -17,6 +17,12 @@ const RunApps = async () => {
 
   for await (const appEntry of apps) {
     const app = appEntry.value as App;
+
+    if(!app.path){
+      await kv.delete(appEntry.key);
+      return;
+    }
+
     RunApp({
       init: true,
       hostname: app.hostname,
@@ -126,6 +132,7 @@ if (key_path && cert_path) {
 Deno.serve({ cert, key, port }, async (request: Request) => {
   const uri = new URL(request.url);
 
+  console.log("calling", uri.hostname)
   const hostProcess: HostProcess = (await kv.get(["hp", uri.hostname])).value as HostProcess 
 
   if (!hostProcess) {
@@ -176,6 +183,7 @@ Deno.serve({ port: 8001 }, async (request: Request) => {
     if (pathname === "/register") {
       const newApp: App = await request.json();
       app.port = await getLastAssignedPort();
+      console.log("registering", hostname)
       await kv.set(["app", hostname], { ...app, ...newApp });
     }
 

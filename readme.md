@@ -49,3 +49,4 @@ check the logs (temporary)
 - [ ] Website Security 
 - [ ] API Security
 - [ ] Make the setup files one one 
+- [ ] Possible support for [Deco](https://github.com/deco-cx/deco)
