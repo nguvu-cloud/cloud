@@ -75,6 +75,7 @@ const compileCommand = new Deno.Command("deno", {
   env: { "DENO_DIR": join(tempDir, "pkg", "deno_dir") },
   args: [
     "compile",
+    "--node-modules-dir=auto",
     "-A",
     "-o",
     join(tempDir, "pkg", "app"),
