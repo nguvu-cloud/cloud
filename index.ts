@@ -76,7 +76,13 @@ addEventListener("loadApp", async (e: AppLoadEvent) => {
   joined.pipeTo(file.writable).then(() => console.log("Logs Loaded"));
 
   // setup pid
-  if (hostProcess.pid && !e.detail.init) Deno.kill(hostProcess.pid, "SIGINT");
+  if (hostProcess.pid && !e.detail.init) {
+    try {
+      Deno.kill(hostProcess.pid, "SIGINT");
+    } catch (error) { 
+      console.log("Error killing process", error)
+    }
+  }
 
   // Set new host details
   await kv.set(["hp", e.detail.hostname], {
