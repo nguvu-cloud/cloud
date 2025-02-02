@@ -77,6 +77,7 @@ const compileCommand = new Deno.Command("deno", {
     "compile",
     "--node-modules-dir=auto",
     "--reload",
+    "--vendor",
     "-A",
     "-o",
     join(tempDir, "pkg", "app"),
